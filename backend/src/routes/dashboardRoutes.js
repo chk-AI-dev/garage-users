@@ -1,0 +1,13 @@
+const express = require('express');
+const dashboardController = require('../controllers/dashboardController');
+const { authenticate, authorize } = require('../middleware/auth');
+
+const router = express.Router();
+
+// Get dashboard stats (Admin only)
+router.get('/stats', authenticate, authorize('admin', 'supervisor'), dashboardController.getStats);
+
+// Get user dashboard stats (All authenticated users)
+router.get('/user-stats', authenticate, dashboardController.getUserStats);
+
+module.exports = router;
