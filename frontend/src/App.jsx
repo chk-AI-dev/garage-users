@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
 import UserManagement from './pages/UserManagement';
+import EquipmentManagement from './pages/EquipmentManagement';
 import NotFound from './pages/NotFound';
 
 // Styles
@@ -65,6 +66,14 @@ function App() {
               element={
                 <ProtectedRoute requiredRole={['admin', 'supervisor']}>
                   <UserManagement />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/equipment"
+              element={
+                <ProtectedRoute requiredRole={['admin', 'supervisor']}>
+                  <EquipmentManagement />
                 </ProtectedRoute>
               }
             />
