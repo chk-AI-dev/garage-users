@@ -1,6 +1,6 @@
 // create driver log model with the following fields : #Date	Tipper ID	Driver Name	Trips	Fuel Used	Trips per Liter	Status
-const equipments = require('./equipments');
 const mongoose = require('mongoose');
+const equipments = require('./equipments');
 
 const driverLogSchema = new mongoose.Schema({   
     date: {
@@ -8,10 +8,9 @@ const driverLogSchema = new mongoose.Schema({
         required: [true, 'Date is required']
     },  
     tipperId: {
-        type: String,
-        required: [true, 'Tipper ID is required'], 
-        // refferance from equplments model
-       ref: 'equipment'
+        type: mongoose.Schema.Types.ObjectId,
+        required: [true, 'Tipper ID is required'],
+        ref: 'Equipment'
     },
     driverName: {
         type: String,   

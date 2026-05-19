@@ -6,25 +6,16 @@ import { authApi } from '../utils/apiClient';
 import './Auth.css';
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       const response = await authApi.login(formData);
       login(response.data.user, response.data.token);
@@ -39,7 +30,7 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      <div className="auth-form">
+      <div className="auth-card">
         <h2>Login</h2>
         <p className="auth-form-subtitle">Access your mining operations dashboard</p>
         <form onSubmit={handleSubmit}>
@@ -71,8 +62,7 @@ const Login = () => {
 
           <div className="remember-forgot">
             <label className="remember-checkbox">
-              <input type="checkbox" />
-              Remember me
+              <input type="checkbox" /> Remember me
             </label>
             <Link to="/forgot-password" className="forgot-password">Forgot Password?</Link>
           </div>
@@ -82,13 +72,8 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="auth-divider">
-          <div></div>
-        </div>
-
-        <div className="auth-links">
-          Don't have an account? <Link to="/register">Sign Up</Link>
-        </div>
+        <div className="auth-divider"><div /></div>
+        <div className="auth-links">Don't have an account? <Link to="/register">Sign Up</Link></div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const dieselLogSchema = new mongoose.Schema({
     required: [true, 'Closing is required']
   },
   alert: {
-    type: string,
+    type: Boolean,
     default: false
   },
    createdAt: {

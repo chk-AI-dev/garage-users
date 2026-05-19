@@ -9,11 +9,9 @@ const operatorLogSchema = new mongoose.Schema({
         required: [true, 'Date is required']    
     },
     machineId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         required: [true, 'Machine ID is required'],
-        // referance from equplments model
         ref: 'Equipment'
-
     },
     operatorName: {
         type: String,

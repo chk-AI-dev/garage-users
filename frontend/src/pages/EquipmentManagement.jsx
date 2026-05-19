@@ -54,7 +54,7 @@ const EquipmentManagement = () => {
       
 
       if (response.data.success) {
-        console.log('Fetched equipment: ', response);
+       
         setEquipment(response.data.equipment);
         setTotal(response.data.total);
       }

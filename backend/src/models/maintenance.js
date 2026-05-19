@@ -4,13 +4,10 @@ const equipments = require('./equipments');
 
 const mongoose = require('mongoose');
 const maintenanceSchema = new mongoose.Schema({
-    
     machineId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         required: [true, 'Machine ID is required'],
-        // referance from equplments model
         ref: 'Equipment'
-
     },
     last_service:{ 
         type: Date,
@@ -18,19 +15,19 @@ const maintenanceSchema = new mongoose.Schema({
     },
     service_hours:{
         type:Number,
-        required:"Enter service hours"
+        required: [true, 'Enter service hours']
     },
     current_hours:{
         type:Number,
-        required:"Enter service hours"
+        required: [true, 'Enter current hours']
     },
     next_due:{
         type:Date,
-        required:"Enter next due date"
+        required: [true, 'Enter next due date']
     },
     status:{
-        type:string,
-        Enum:['Due', 'Ok'],
+        type: String,
+        enum: ['Due', 'Ok'],
         default: 'Due'
     },
     createdAt: {
