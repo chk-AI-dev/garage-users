@@ -4,7 +4,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { AuthProvider } from './context/AuthContext';
-import Header from './components/Header';
+import Topbar from './components/Topbar';
+import Layout from './components/Layout';
+import { SidebarProvider } from './context/SidebarContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
 // Pages
@@ -15,6 +17,8 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
 import UserManagement from './pages/UserManagement';
+import EquipmentManagement from './pages/EquipmentManagement';
+import DriverLogs from './pages/DriverLogs';
 import NotFound from './pages/NotFound';
 
 // Styles
@@ -25,9 +29,10 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Header />
-        <main>
-          <Routes>
+        <SidebarProvider>
+          <Topbar />
+          <main>
+            <Routes>
             {/* Auth Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -38,7 +43,9 @@ function App() {
               path="/dashboard"
               element={
                 <ProtectedRoute>
-                  <Dashboard />
+                  <Layout>
+                    <Dashboard />
+                  </Layout>
                 </ProtectedRoute>
               }
             />
@@ -46,7 +53,20 @@ function App() {
               path="/profile"
               element={
                 <ProtectedRoute>
-                  <Profile />
+                  <Layout>
+                    <Profile />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/driver-logs"
+              element={
+                <ProtectedRoute>
+                  <Layout>
+                    <DriverLogs />
+                  </Layout>
                 </ProtectedRoute>
               }
             />
@@ -56,7 +76,9 @@ function App() {
               path="/admin"
               element={
                 <ProtectedRoute requiredRole={['admin', 'supervisor']}>
-                  <AdminDashboard />
+                  <Layout>
+                    <AdminDashboard />
+                  </Layout>
                 </ProtectedRoute>
               }
             />
@@ -64,7 +86,19 @@ function App() {
               path="/admin/users"
               element={
                 <ProtectedRoute requiredRole={['admin', 'supervisor']}>
-                  <UserManagement />
+                  <Layout>
+                    <UserManagement />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/equipment"
+              element={
+                <ProtectedRoute requiredRole={['admin', 'supervisor']}>
+                  <Layout>
+                    <EquipmentManagement />
+                  </Layout>
                 </ProtectedRoute>
               }
             />
@@ -73,7 +107,8 @@ function App() {
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </main>
+          </main>
+        </SidebarProvider>
 
         <ToastContainer
           position="bottom-right"
