@@ -1,0 +1,541 @@
+.equipment-management {
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--light-bg-secondary) 0%, var(--light-bg-primary) 100%);
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+/* Dark mode */
+:global(.dark-mode) .equipment-management {
+  background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, var(--dark-bg-primary) 100%);
+}
+
+/* Header Section */
+.equipment-management .management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.equipment-management .management-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* Search and Filter Section */
+.equipment-management .search-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  background: var(--light-bg-primary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+:global(.dark-mode) .equipment-management .search-filters {
+  background: var(--dark-bg-secondary);
+  border-color: var(--border-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.equipment-management .search-form {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  min-width: 300px;
+}
+
+.equipment-management .search-form .form-group {
+  flex: 1;
+}
+
+.equipment-management .search-form .search-input {
+  width: 100%;
+}
+
+.equipment-management .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
+}
+
+.equipment-management .filter-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.equipment-management .filter-group .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+/* Table Container */
+.equipment-management .table-container {
+  background: var(--light-bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+:global(.dark-mode) .equipment-management .table-container {
+  background: var(--dark-bg-secondary);
+  border-color: var(--border-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-management .table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.equipment-management .table thead {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+  color: white;
+}
+
+.equipment-management .table thead th {
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.equipment-management .table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+}
+
+:global(.dark-mode) .equipment-management .table tbody tr {
+  border-bottom-color: var(--border-dark);
+}
+
+.equipment-management .table tbody tr:hover {
+  background-color: rgba(30, 64, 175, 0.05);
+  transform: translateX(2px);
+}
+
+:global(.dark-mode) .equipment-management .table tbody tr:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+.equipment-management .table tbody td {
+  padding: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.equipment-management .table tbody td.font-bold {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.equipment-management .table tbody td.text-center {
+  text-align: center;
+}
+
+.equipment-management .table tbody td.text-muted {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Status Badge */
+.equipment-management .status-select {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  color: inherit;
+}
+
+.equipment-management .status-select:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.equipment-management .badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+:global(.dark-mode) .equipment-management .badge-success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #86efac;
+}
+
+.equipment-management .badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+:global(.dark-mode) .equipment-management .badge-warning {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.equipment-management .badge-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+:global(.dark-mode) .equipment-management .badge-danger {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.equipment-management .badge-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+:global(.dark-mode) .equipment-management .badge-secondary {
+  background-color: rgba(107, 114, 128, 0.2);
+  color: #d1d5db;
+}
+
+/* Operator Name */
+.equipment-management .operator-name {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Action Buttons */
+.equipment-management .action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.equipment-management .btn-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+  min-height: 32px;
+}
+
+.equipment-management .btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.equipment-management .btn-secondary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.equipment-management .btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.equipment-management .btn-danger:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Pagination */
+.equipment-management .pagination {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.equipment-management .page-info {
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 120px;
+  text-align: center;
+}
+
+.equipment-management .pagination button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--light-bg-primary);
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:global(.dark-mode) .equipment-management .pagination button {
+  background-color: var(--dark-bg-secondary);
+  border-color: var(--primary-color);
+}
+
+.equipment-management .pagination button:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.equipment-management .pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Equipment Form */
+.equipment-management .equipment-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.equipment-management .equipment-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.equipment-management .equipment-form label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.equipment-management .equipment-form .form-input,
+.equipment-management .equipment-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: var(--light-bg-primary);
+  color: var(--text-primary);
+}
+
+:global(.dark-mode) .equipment-management .equipment-form .form-input,
+:global(.dark-mode) .equipment-management .equipment-form textarea {
+  background-color: var(--dark-bg-primary);
+  border-color: var(--border-dark);
+  color: var(--text-primary);
+}
+
+.equipment-management .equipment-form .form-input:focus,
+.equipment-management .equipment-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+:global(.dark-mode) .equipment-management .equipment-form .form-input:focus,
+:global(.dark-mode) .equipment-management .equipment-form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.equipment-management .equipment-form .form-input:disabled {
+  background-color: var(--border-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+:global(.dark-mode) .equipment-management .equipment-form .form-input:disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.equipment-management .equipment-form textarea {
+  grid-column: 1 / -1;
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Form Actions */
+.equipment-management .form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+:global(.dark-mode) .equipment-management .form-actions {
+  border-top-color: var(--border-dark);
+}
+
+.equipment-management .form-actions .btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.equipment-management .form-actions .btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+  color: white;
+}
+
+.equipment-management .form-actions .btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+}
+
+.equipment-management .form-actions .btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.equipment-management .form-actions .btn-secondary:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.equipment-management .form-actions .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .equipment-management {
+    padding: 1.5rem;
+  }
+
+  .equipment-management .management-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .equipment-management .management-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .equipment-management .search-filters {
+    flex-direction: column;
+  }
+
+  .equipment-management .search-form {
+    flex-direction: column;
+  }
+
+  .equipment-management .equipment-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .equipment-management {
+    padding: 1rem;
+  }
+
+  .equipment-management .management-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .equipment-management .table {
+    font-size: 0.85rem;
+  }
+
+  .equipment-management .table thead th,
+  .equipment-management .table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .equipment-management .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .equipment-management .btn-sm {
+    width: 100%;
+  }
+
+  .equipment-management .search-filters {
+    padding: 1rem;
+  }
+
+  .equipment-management .filter-group {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipment-management {
+    padding: 0.75rem;
+  }
+
+  .equipment-management .management-header {
+    gap: 0.5rem;
+  }
+
+  .equipment-management .management-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .equipment-management .management-header .btn {
+    width: 100%;
+  }
+
+  .equipment-management .search-filters {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .equipment-management .search-form {
+    flex-direction: column;
+  }
+
+  .equipment-management .table {
+    font-size: 0.75rem;
+  }
+
+  .equipment-management .table thead th,
+  .equipment-management .table tbody td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .equipment-management .form-actions {
+    flex-direction: column;
+  }
+
+  .equipment-management .pagination {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .equipment-management .pagination button {
+    width: 100%;
+  }
+}
