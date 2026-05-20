@@ -14,6 +14,7 @@ const AdminDashboard = () => {
     fetchStats();
   }, []);
 
+  
   const fetchStats = async () => {
     try {
       const response = await dashboardApi.getStats();
