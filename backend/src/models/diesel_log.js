@@ -17,6 +17,7 @@ const dieselLogSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'Received is required']
   },
+  
   issued: {
     type: Number,
     required: [true, 'Issued is required']
