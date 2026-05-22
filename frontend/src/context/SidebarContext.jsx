@@ -11,9 +11,11 @@ export const SidebarProvider = ({ children }) => {
       return raw ? JSON.parse(raw) : false;
     } catch (e) {
       return false;
+
     }
   });
 
+  // useeffect hook for changes in collapsed state
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(collapsed));
