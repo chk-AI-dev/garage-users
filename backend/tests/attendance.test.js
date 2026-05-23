@@ -3,6 +3,7 @@ jest.mock('../src/middleware/auth', () => ({
   authorize: () => (req, res, next) => next()
 }));
 
+// test code for attendance routes, mocking the Attendance model to avoid actual database interactions. We will test the GET and POST endpoints for attendance records.
 jest.mock('../src/models/attendance', () => ({
   find: jest.fn().mockResolvedValue([{ _id: '1', date: new Date(), name: 'Alice', role: 'driver', location: 'Site A', timestamp: new Date() }]),
   countDocuments: jest.fn().mockResolvedValue(1),
