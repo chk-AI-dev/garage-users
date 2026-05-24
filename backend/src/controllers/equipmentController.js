@@ -7,7 +7,7 @@ exports.getAllEquipment = async (req, res) => {
   try {
     const { type, status, assignedArea, page = 1, limit = 10, search } = req.query;
     const query = {};
-
+    // Filter by type, status, and assigned area if provided
     if (type) query.type = type;
     if (status) query.status = status;
     if (assignedArea) query.assignedArea = { $regex: assignedArea, $options: 'i' };
