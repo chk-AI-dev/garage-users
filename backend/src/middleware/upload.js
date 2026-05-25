@@ -8,6 +8,7 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
+// upload section for store profile picture
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, uploadDir);
