@@ -1,7 +1,7 @@
 const Maintenance = require('../models/maintenance');
 const Equipment = require('../models/equipments');
 const { validationResult } = require('express-validator');
-
+// comment for maintainance
 exports.getAllMaintenance = async (req, res) => {
   try {
     const { machineId, status, page = 1, limit = 25, search } = req.query;
