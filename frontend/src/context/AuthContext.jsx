@@ -1,7 +1,7 @@
 import React, { createContext, useState, useCallback } from 'react';
 
 export const AuthContext = createContext();
-
+// auto context token from localStorage on initial load
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('user');
