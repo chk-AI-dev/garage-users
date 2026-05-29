@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSidebar } from '../context/SidebarContext';
-
+// working on side bar component with tailwind css, using NavLink for active state and icons from heroicons
 const Sidebar = () => {
   const { collapsed } = useSidebar();
   return (
