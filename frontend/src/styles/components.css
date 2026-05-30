@@ -5,6 +5,7 @@
   padding: 0 20px;
 }
 
+/* Main Content */
 main {
   min-height: calc(100vh - 80px);
   background: var(--bg-primary);
