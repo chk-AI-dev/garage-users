@@ -1,7 +1,7 @@
 //# create file named maintenance.js in the models directory and add the following code:
 // model fields : operator_log : Machine ID	Last Service Hours	Current Hours	Next Due  Status
 const equipments = require('./equipments');
-
+// mongoose schema for maintenance
 const mongoose = require('mongoose');
 const maintenanceSchema = new mongoose.Schema({
     machineId: {
