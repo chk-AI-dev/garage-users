@@ -10,7 +10,7 @@ const validateDriverLog = [
 	body('trips').isNumeric().withMessage('Trips must be a number'),
 	body('fuelUsed').isNumeric().withMessage('Fuel used must be a number')
 ];
-
+// Routes for driver logs
 router.get('/', authenticate, authorize('admin', 'supervisor'), driverController.getAllDriverLogs);
 router.get('/stats', authenticate, authorize('admin', 'supervisor'), driverController.getDriverStats);
 router.get('/:id', authenticate, authorize('admin', 'supervisor'), [param('id').isMongoId().withMessage('Invalid id')], driverController.getDriverLog);
