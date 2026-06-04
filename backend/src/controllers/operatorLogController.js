@@ -1,7 +1,7 @@
 const OperatorLog = require('../models/operator_log');
 const Equipment = require('../models/equipments');
 const { validationResult } = require('express-validator');
-
+// Controller for operator logs
 exports.getAllOperatorLogs = async (req, res) => {
   try {
     const { date, operatorName, status, page = 1, limit = 25, search } = req.query;
