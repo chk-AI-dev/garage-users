@@ -13,7 +13,7 @@ exports.getStats = async (req, res) => {
         }
       }
     ]);
-
+    // Group users by status (active/inactive)
     const usersByStatus = await User.aggregate([
       {
         $group: {
