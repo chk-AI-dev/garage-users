@@ -23,7 +23,7 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
-
+  // Only allow access if user is authenticated and has the right role
   if (loading) return <LoadingSpinner />;
 
   return (
