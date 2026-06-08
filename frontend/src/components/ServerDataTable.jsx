@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import DataTable from './DataTable';
 import api from '../utils/api';
-
+// A reusable component for displaying paginated, sortable, and searchable data from any API endpoint
 export default function ServerDataTable({
   endpoint,
   columns,
