@@ -11,6 +11,7 @@
   - [x] Database indexes configured
   - [x] Timestamps (createdAt, updatedAt) automated
 
+
 - [x] Equipment Controller created (`/backend/src/controllers/equipmentController.js`)
   - [x] getAllEquipment() with pagination/filtering
   - [x] getEquipment() single record

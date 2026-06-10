@@ -8,6 +8,7 @@ Fixed CORS configuration fallback:
 - **Before:** `origin: process.env.FRONTEND_URL || 'http://localhost:5000'`
 - **After:** `origin: process.env.FRONTEND_URL || 'http://localhost:3000'`
 
+
 ### 🔧 To Resolve Port Issues
 
 #### Option 1: Kill All Node Processes (Windows)
