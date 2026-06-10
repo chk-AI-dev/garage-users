@@ -108,6 +108,7 @@ Look for output:
 
 ## Environment Configuration Checklist
 
+
 ### Required in `.env`:
 - ✅ PORT=5000
 - ✅ NODE_ENV=development
@@ -115,6 +116,7 @@ Look for output:
 - ✅ JWT_SECRET=your_secret_key
 - ✅ JWT_EXPIRE=7d
 - ✅ FRONTEND_URL=http://localhost:3000
+
 
 ### Fixed Issues:
 - ✅ CORS fallback changed to port 3000 (frontend)

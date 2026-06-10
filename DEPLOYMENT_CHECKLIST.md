@@ -2,6 +2,7 @@
 
 ## Pre-Deployment Verification Checklist
 
+
 ### Backend Implementation ✅
 - [x] Equipment Model created (`/backend/src/models/equipments.js`)
   - [x] Schema has all required fields
@@ -10,6 +11,7 @@
   - [x] Enum validation for type and status
   - [x] Database indexes configured
   - [x] Timestamps (createdAt, updatedAt) automated
+
 
 - [x] Equipment Controller created (`/backend/src/controllers/equipmentController.js`)
   - [x] getAllEquipment() with pagination/filtering

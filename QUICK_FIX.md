@@ -2,6 +2,7 @@
 
 ## ❌ The Error You Got
 
+
 ```
 Error: listen EADDRINUSE: address already in use :::5000
 ```
@@ -9,6 +10,7 @@ Error: listen EADDRINUSE: address already in use :::5000
 This means **port 5000 is already in use** by another process.
 
 ---
+
 
 ## ✅ Issues Fixed
 
