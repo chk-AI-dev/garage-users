@@ -10,7 +10,7 @@ const validateDiesel = [
 	body('issued').isNumeric().withMessage('Issued must be a number'),
 	body('closing').isNumeric().withMessage('Closing must be a number')
 ];
-
+// List and stats (admin/supervisor)
 router.get('/', authenticate, authorize('admin', 'supervisor'), dieselController.getAllDieselLogs);
 router.get('/stats', authenticate, authorize('admin', 'supervisor'), dieselController.getDieselStats);
 router.get('/:id', authenticate, authorize('admin', 'supervisor'), [param('id').isMongoId().withMessage('Invalid id')], dieselController.getDieselLog);

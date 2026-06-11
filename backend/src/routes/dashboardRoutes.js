@@ -9,5 +9,5 @@ router.get('/stats', authenticate, authorize('admin', 'supervisor'), dashboardCo
 
 // Get user dashboard stats (All authenticated users)
 router.get('/user-stats', authenticate, dashboardController.getUserStats);
-
+// Additional dashboard routes can be added here
 module.exports = router;

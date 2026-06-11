@@ -4,7 +4,7 @@ const router = express.Router();
 const { body, param, query } = require('express-validator');
 const attendanceController = require('../controllers/attendanceController');
 const { authenticate, authorize } = require('../middleware/auth');
-
+// Validation rules
 const createAttendanceValidation = [
 	body('date').optional().isISO8601().toDate().withMessage('Invalid date'),
 	body('name').trim().notEmpty().withMessage('Name is required'),
