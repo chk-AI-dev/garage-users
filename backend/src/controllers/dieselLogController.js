@@ -1,6 +1,6 @@
 const DieselLog = require('../models/diesel_log');
 const { validationResult } = require('express-validator');
-
+// diesel log for system
 exports.getAllDieselLogs = async (req, res) => {
   try {
     const { date, page = 1, limit = 25, search } = req.query;
@@ -18,7 +18,7 @@ exports.getAllDieselLogs = async (req, res) => {
         { alert: { $regex: search, $options: 'i' } }
       ];
     }
-
+    // For in-memory sorting and pagination if the dataset is small, otherwise use MongoDB's skip and limit
     const skip = (page - 1) * limit;
     const found = await DieselLog.find(query);
     let logs;

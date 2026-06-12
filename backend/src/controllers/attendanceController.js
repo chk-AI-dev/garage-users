@@ -25,13 +25,13 @@ exports.getAllAttendance = async (req, res) => {
         { location: { $regex: search, $options: 'i' } }
       ];
     }
-
+    
     const skip = (page - 1) * limit;
     const records = await Attendance.find(query)
       .skip(skip)
       .limit(parseInt(limit))
       .sort({ timestamp: -1 });
-
+    
     const total = await Attendance.countDocuments(query);
 
     res.json({
@@ -128,7 +128,7 @@ exports.getAttendanceStats = async (req, res) => {
       const end = new Date(d.setHours(23, 59, 59, 999));
       match.date = { $gte: start, $lte: end };
     }
-
+    
     const total = await Attendance.countDocuments(match);
 
     const byRole = await Attendance.aggregate([

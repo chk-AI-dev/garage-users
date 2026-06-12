@@ -20,7 +20,7 @@ exports.getAllEquipment = async (req, res) => {
         { registrationNumber: { $regex: search, $options: 'i' } }
       ];
     }
-
+    // For in-memory sorting and pagination if the dataset is small, otherwise use MongoDB's skip and limit
     const skip = (page - 1) * limit;
     const equipment = await Equipment.find(query)
       .populate('operator', 'firstName lastName email')
