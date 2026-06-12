@@ -128,14 +128,14 @@ exports.getAttendanceStats = async (req, res) => {
       const end = new Date(d.setHours(23, 59, 59, 999));
       match.date = { $gte: start, $lte: end };
     }
-
+    // Total count
     const total = await Attendance.countDocuments(match);
 
     const byRole = await Attendance.aggregate([
       { $match: match },
       { $group: { _id: '$role', count: { $sum: 1 } } }
     ]);
-
+    // Group by location
     const byLocation = await Attendance.aggregate([
       { $match: match },
       { $group: { _id: '$location', count: { $sum: 1 } } }

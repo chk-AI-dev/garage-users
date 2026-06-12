@@ -18,7 +18,7 @@ exports.getAllDieselLogs = async (req, res) => {
         { alert: { $regex: search, $options: 'i' } }
       ];
     }
-
+    // Pagination and sorting
     const skip = (page - 1) * limit;
     const found = await DieselLog.find(query);
     let logs;

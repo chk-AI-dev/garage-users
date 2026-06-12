@@ -20,7 +20,7 @@ exports.getAllEquipment = async (req, res) => {
         { registrationNumber: { $regex: search, $options: 'i' } }
       ];
     }
-
+    // Pagination and sorting
     const skip = (page - 1) * limit;
     const equipment = await Equipment.find(query)
       .populate('operator', 'firstName lastName email')

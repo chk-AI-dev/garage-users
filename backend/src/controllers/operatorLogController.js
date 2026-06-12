@@ -14,7 +14,7 @@ exports.getAllOperatorLogs = async (req, res) => {
     if (operatorName) query.operatorName = { $regex: operatorName, $options: 'i' };
     if (status) query.status = status;
     if (search) query.$or = [{ operatorName: { $regex: search, $options: 'i' } }, { shift: { $regex: search, $options: 'i' } }];
-
+    //  Pagination and sorting
     const skip = (page - 1) * limit;
     const found = await OperatorLog.find(query);
     let logs;
