@@ -130,7 +130,7 @@ exports.getAttendanceStats = async (req, res) => {
     }
     // Total count
     const total = await Attendance.countDocuments(match);
-
+    
     const byRole = await Attendance.aggregate([
       { $match: match },
       { $group: { _id: '$role', count: { $sum: 1 } } }
