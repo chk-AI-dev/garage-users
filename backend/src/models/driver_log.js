@@ -1,7 +1,7 @@
 // create driver log model with the following fields : #Date	Tipper ID	Driver Name	Trips	Fuel Used	Trips per Liter	Status
 const mongoose = require('mongoose');
 const equipments = require('./equipments');
-
+// Define the driver log schema
 const driverLogSchema = new mongoose.Schema({   
     date: {
         type: Date,
