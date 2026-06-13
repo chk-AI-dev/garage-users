@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Define the equipment schema
 const equipmentSchema = new mongoose.Schema({
   equipmentId: {
     type: String,

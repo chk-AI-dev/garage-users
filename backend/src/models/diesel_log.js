@@ -3,7 +3,7 @@
 
 
 const mongoose = require('mongoose');   
-
+// Define the diesel log schema
 const dieselLogSchema = new mongoose.Schema({
   date: {
     type: Date,
