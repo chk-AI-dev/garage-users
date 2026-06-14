@@ -1,5 +1,6 @@
 # 🔧 Backend Startup Error - Complete Fix Guide
 
+
 ## ❌ The Error You Got
 
 
@@ -14,15 +15,19 @@ This means **port 5000 is already in use** by another process.
 
 ## ✅ Issues Fixed
 
+
 ### 1. CORS Configuration Bug
 **Problem:** Backend was using wrong fallback URL for frontend
 - **Before:** `origin: process.env.FRONTEND_URL || 'http://localhost:5000'`
 - **After:** `origin: process.env.FRONTEND_URL || 'http://localhost:3000'`
 
+
 **Status:** ✅ FIXED
+
 
 ### 2. Port 5000 Already in Use
 **Problem:** Node process or other service is using port 5000
+
 
 **Solutions Below** ⬇️
 
