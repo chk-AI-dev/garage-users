@@ -4,6 +4,8 @@
 
 The Equipment Management System for mining operations has been **fully implemented** with complete backend and frontend functionality. The system provides comprehensive CRUD capabilities for managing mining equipment, including features like operator assignment, maintenance tracking, and real-time status updates.
 
+
+
 ---
 
 ## Files Created

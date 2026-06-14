@@ -3,9 +3,12 @@
 ## Overview
 The Equipment Management System has been fully implemented for the Mining Operations Management application. It provides comprehensive CRUD functionality for managing mining equipment, including features like operator assignment, maintenance tracking, and real-time status updates.
 
+
 ## What Was Implemented
 
+
 ### 1. Backend Components
+
 
 #### Equipment Model (`/backend/src/models/equipments.js`)
 **Purpose**: Defines the MongoDB schema for equipment storage

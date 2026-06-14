@@ -6,7 +6,9 @@
 - Backend server on http://localhost:5001
 - Frontend development server on http://localhost:3000
 
+
 ## Backend Setup
+
 
 ### 1. Install Dependencies (if not already done)
 ```bash
