@@ -1,5 +1,5 @@
 //# create file for attendance model with the following fields : #Date	Name	Role	Location	Timestamp
-
+// mongoos connection and schema definition for attendance
 const mongoose = require('mongoose');
 // Define the attendance schema
 const attendanceSchema = new mongoose.Schema({

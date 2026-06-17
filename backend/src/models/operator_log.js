@@ -1,7 +1,7 @@
 //# create file named operator_log.js in the models directory and add the following code:
 // model fields : operator_log : Date	Machine ID	Operator Name	Shift	Hours	Efficiency	Status
 const equipments = require('./equipments');
-
+// mongoos connection and schema definition for operator log
 const mongoose = require('mongoose');
 const operatorLogSchema = new mongoose.Schema({
     date: {

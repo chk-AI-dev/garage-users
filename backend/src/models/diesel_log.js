@@ -1,7 +1,7 @@
 //create a new file named diesel_log.js in the models directory and add the following code:
 //model fields : diesel_log : Date Opening Received Issued Closing Alert 
 
-
+// mongoos connection and schema definition for diesel log
 const mongoose = require('mongoose');   
 // Define the diesel log schema
 const dieselLogSchema = new mongoose.Schema({
