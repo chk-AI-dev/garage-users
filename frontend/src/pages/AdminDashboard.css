@@ -2,7 +2,7 @@
   padding: 40px 20px;
   animation: fadeIn 0.5s ease-in;
 }
-
+/* Fade-in animation for the dashboard */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -13,7 +13,7 @@
     transform: translateY(0);
   }
 }
-
+/* Admin header with title and actions */
 .admin-header {
   display: flex;
   justify-content: space-between;
@@ -21,7 +21,7 @@
   margin-bottom: 40px;
   gap: 20px;
 }
-
+/* Gradient text for the admin title */
 .admin-header h2 {
   margin: 0;
   font-size: 32px;

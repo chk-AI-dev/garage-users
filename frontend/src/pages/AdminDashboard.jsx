@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './AdminDashboard.css';
 
-
+/* AdminDashboard.jsx - Main dashboard for admin users to view stats and manage users/equipment */
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);

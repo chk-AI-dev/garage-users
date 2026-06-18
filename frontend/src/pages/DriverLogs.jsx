@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import DataTable from '../components/DataTable';
 import api from '../utils/api';
-
+// Page to display driver logs with columns for tipper ID, driver name, trips, fuel used, trips per liter, and created date
 export default function DriverLogs() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
