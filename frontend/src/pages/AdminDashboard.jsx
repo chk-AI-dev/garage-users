@@ -5,6 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './AdminDashboard.css';
 
+// Admin Dashboard page to display overall stats and management links for admin users
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);

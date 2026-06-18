@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import DataTable from '../components/DataTable';
 import api from '../utils/api';
 
+// Driver Logs page to display logs of drivers with details like tipper ID, driver name, trips, fuel used, etc.
 export default function DriverLogs() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);

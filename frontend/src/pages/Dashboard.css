@@ -2,7 +2,7 @@
   animation: fadeIn 0.5s ease-in;
   padding: 40px 20px;
 }
-
+/* Fade-in animation for the dashboard */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -13,7 +13,7 @@
     transform: translateY(0);
   }
 }
-
+/* Dashboard header with title */
 .dashboard h2 {
   margin-bottom: 40px;
   color: var(--text-primary);
