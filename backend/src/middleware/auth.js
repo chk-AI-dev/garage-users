@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-
+// Middleware for authentication and authorization
 const authenticate = (req, res, next) => {
   try {
     const token = req.headers.authorization?.split(' ')[1];
@@ -10,7 +10,7 @@ const authenticate = (req, res, next) => {
         message: 'No token, authorization denied'
       });
     }
-
+    // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     next();
@@ -21,7 +21,7 @@ const authenticate = (req, res, next) => {
     });
   }
 };
-
+// Middleware for role-based authorization
 const authorize = (...allowedRoles) => {
   return (req, res, next) => {
     if (!req.user) {
