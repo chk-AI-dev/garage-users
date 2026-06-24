@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-
+// Sidebar context for managing sidebar collapsed state
 const SidebarContext = createContext();
 
 const STORAGE_KEY = 'sidebarCollapsed';
-
+// SidebarProvider component to provide sidebar context to children
 export const SidebarProvider = ({ children }) => {
   const [collapsed, setCollapsed] = useState(() => {
     try {
