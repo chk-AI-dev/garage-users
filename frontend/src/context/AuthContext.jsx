@@ -1,7 +1,7 @@
 import React, { createContext, useState, useCallback } from 'react';
-
+// Authentication context for managing user authentication state
 export const AuthContext = createContext();
-// auto context token from localStorage on initial load
+// Provider component for wrapping the application with authentication context  
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('user');
