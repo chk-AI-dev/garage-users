@@ -3,7 +3,7 @@ const router = express.Router();
 const { body, param } = require('express-validator');
 const driverController = require('../controllers/driverLogController');
 const { authenticate, authorize } = require('../middleware/auth');
-
+// Validation middleware for driver log entries
 const validateDriverLog = [
 	body('tipperId').notEmpty().withMessage('Tipper ID is required').isMongoId().withMessage('Invalid tipperId'),
 	body('driverName').trim().notEmpty().withMessage('Driver name is required'),

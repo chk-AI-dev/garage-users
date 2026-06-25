@@ -1,7 +1,7 @@
 const express = require('express');
 const dashboardController = require('../controllers/dashboardController');
 const { authenticate, authorize } = require('../middleware/auth');
-
+// Create a router instance
 const router = express.Router();
 
 // Get dashboard stats (Admin only)

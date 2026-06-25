@@ -3,7 +3,7 @@ const router = express.Router();
 const { body, param, query } = require('express-validator');
 const dieselController = require('../controllers/dieselLogController');
 const { authenticate, authorize } = require('../middleware/auth');
-
+// Validation middleware for diesel log entries
 const validateDiesel = [
 	body('opening').isNumeric().withMessage('Opening must be a number'),
 	body('received').isNumeric().withMessage('Received must be a number'),
