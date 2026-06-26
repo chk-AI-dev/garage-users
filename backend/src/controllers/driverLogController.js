@@ -1,7 +1,7 @@
 const DriverLog = require('../models/driver_log');
 const Equipment = require('../models/equipments');
 const { validationResult } = require('express-validator');
-
+// Controller for driver logs
 exports.getAllDriverLogs = async (req, res) => {
   try {
     const { date, driverName, status, page = 1, limit = 25, search } = req.query;
@@ -33,7 +33,7 @@ exports.getAllDriverLogs = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Get a single driver log by ID
 exports.getDriverLog = async (req, res) => {
   try {
     const log = await DriverLog.findById(req.params.id).populate('tipperId', 'equipmentId type');
@@ -43,7 +43,7 @@ exports.getDriverLog = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Create a new driver log
 exports.createDriverLog = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ success: false, message: 'Validation error', errors: errors.array() });

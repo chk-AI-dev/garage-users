@@ -36,7 +36,7 @@ exports.getAllDieselLogs = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Get a single diesel log by ID
 exports.getDieselLog = async (req, res) => {
   try {
     const log = await DieselLog.findById(req.params.id);
@@ -46,7 +46,7 @@ exports.getDieselLog = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Create a new diesel log
 exports.createDieselLog = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ success: false, message: 'Validation error', errors: errors.array() });
