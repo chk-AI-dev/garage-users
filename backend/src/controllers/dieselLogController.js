@@ -1,6 +1,6 @@
 const DieselLog = require('../models/diesel_log');
 const { validationResult } = require('express-validator');
-
+// Controller for diesel logs - CRUD operations and stats
 exports.getAllDieselLogs = async (req, res) => {
   try {
     const { date, page = 1, limit = 25, search } = req.query;
@@ -36,7 +36,7 @@ exports.getAllDieselLogs = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Get a single diesel log entry by ID
 exports.getDieselLog = async (req, res) => {
   try {
     const log = await DieselLog.findById(req.params.id);
@@ -46,7 +46,7 @@ exports.getDieselLog = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Create a new diesel log entry
 exports.createDieselLog = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ success: false, message: 'Validation error', errors: errors.array() });

@@ -33,7 +33,7 @@ exports.getAllDriverLogs = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+//  Get a single driver log entry by ID
 exports.getDriverLog = async (req, res) => {
   try {
     const log = await DriverLog.findById(req.params.id).populate('tipperId', 'equipmentId type');
@@ -43,7 +43,7 @@ exports.getDriverLog = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Create a new driver log entry
 exports.createDriverLog = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ success: false, message: 'Validation error', errors: errors.array() });

@@ -31,7 +31,7 @@ exports.getAllOperatorLogs = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Get a single operator log entry by ID
 exports.getOperatorLog = async (req, res) => {
   try {
     const log = await OperatorLog.findById(req.params.id).populate('machineId', 'equipmentId type');
@@ -41,7 +41,7 @@ exports.getOperatorLog = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// Create a new operator log entry
 exports.createOperatorLog = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ success: false, message: 'Validation error', errors: errors.array() });
