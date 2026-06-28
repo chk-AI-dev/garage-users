@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { useAuth } from '../hooks/useAuth';
 import { authApi } from '../utils/apiClient';
 import './Auth.css';
-
+// Login Page Component
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);

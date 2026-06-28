@@ -1,7 +1,7 @@
 import React from 'react';
 import './NotFound.css';
 import { Link } from 'react-router-dom';
-
+// Not Found Page Component
 const NotFound = () => {
   return (
     <div className="not-found">
