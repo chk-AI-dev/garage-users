@@ -5,7 +5,7 @@ import { userApi } from '../utils/apiClient';
 import Modal from '../components/Modal';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './EquipmentManagement.css';
-
+// Equipment Management Page Component
 const EquipmentManagement = () => {
   const [equipment, setEquipment] = useState([]);
   const [operators, setOperators] = useState([]);
