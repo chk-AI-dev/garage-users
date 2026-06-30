@@ -1,6 +1,6 @@
 import api from './api';
 
-
+// Equipment APIs
 const equipmentApi = {
   // Get all equipment with filters and pagination
   getAllEquipment: async (page = 1, limit = 10, filters = {}) => {

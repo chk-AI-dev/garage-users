@@ -1,5 +1,5 @@
 import api from './api';
-
+// Auth APIs
 // Auth APIs
 export const authApi = {
   register: (data) => api.post('/auth/register', data),
