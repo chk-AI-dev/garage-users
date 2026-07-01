@@ -3,7 +3,7 @@ const router = express.Router();
 const { body, param, query } = require('express-validator');
 const maintenanceController = require('../controllers/maintenanceController');
 const { authenticate, authorize } = require('../middleware/auth');
-
+// Validation rules for maintenance records
 const validateMaintenance = [
 	body('machineId').notEmpty().withMessage('Machine ID is required').isMongoId().withMessage('Invalid machineId'),
 	body('last_service').optional().isISO8601().toDate().withMessage('Invalid date for last_service'),

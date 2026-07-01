@@ -1,5 +1,5 @@
 const express = require('express');
-
+// Validation rules for attendance records
 const router = express.Router();
 const { body, param, query } = require('express-validator');
 const attendanceController = require('../controllers/attendanceController');

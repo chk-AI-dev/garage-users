@@ -3,7 +3,7 @@ const router = express.Router();
 const { body, param } = require('express-validator');
 const operatorController = require('../controllers/operatorLogController');
 const { authenticate, authorize } = require('../middleware/auth');
-
+// Validation rules for operator logs
 const validateOperatorLog = [
 	body('machineId').notEmpty().withMessage('Machine ID is required').isMongoId().withMessage('Invalid machineId'),
 	body('operatorName').trim().notEmpty().withMessage('Operator name is required'),
