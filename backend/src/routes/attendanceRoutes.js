@@ -1,5 +1,5 @@
 const express = require('express');
-
+// Import necessary modules and middleware
 const router = express.Router();
 const { body, param, query } = require('express-validator');
 const attendanceController = require('../controllers/attendanceController');
