@@ -14,7 +14,7 @@ exports.getAllAttendance = async (req, res) => {
       const end = new Date(d.setHours(23, 59, 59, 999));
       query.date = { $gte: start, $lte: end };
     }
-
+    // Filter by name, role, location
     if (name) query.name = { $regex: name, $options: 'i' };
     if (role) query.role = role;
     if (location) query.location = { $regex: location, $options: 'i' };
