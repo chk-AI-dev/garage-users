@@ -13,7 +13,7 @@ exports.register = async (req, res) => {
         errors: errors.array()
       });
     }
-
+    // Extract user details from request body
     const { firstName, lastName, email, password, role = 'driver' } = req.body;
 
     // Check if user already exists

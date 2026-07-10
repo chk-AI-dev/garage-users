@@ -19,7 +19,7 @@ exports.getAllUsers = async (req, res) => {
       .sort({ createdAt: -1 });
 
     const total = await User.countDocuments(query);
-
+    // Return paginated response
     res.json({
       success: true,
       total,
