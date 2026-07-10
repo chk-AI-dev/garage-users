@@ -11,7 +11,7 @@ exports.getAllUsers = async (req, res) => {
 
     if (role) query.role = role;
     if (status) query.status = status;
-
+    
     const skip = (page - 1) * limit;
     const users = await User.find(query)
       .skip(skip)
