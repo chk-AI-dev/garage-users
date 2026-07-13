@@ -7,7 +7,7 @@ exports.getAllAttendance = async (req, res) => {
   try {
     const { date, name, role, location, page = 1, limit = 25, search } = req.query;
     const query = {};
-
+    // date
     if (date) {
       const d = new Date(date);
       const start = new Date(d.setHours(0, 0, 0, 0));

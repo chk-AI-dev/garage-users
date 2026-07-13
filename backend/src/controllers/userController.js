@@ -8,7 +8,7 @@ exports.getAllUsers = async (req, res) => {
   try {
     const { role, status, page = 1, limit = 10 } = req.query;
     const query = {};
-
+    // check role & status
     if (role) query.role = role;
     if (status) query.status = status;
     
