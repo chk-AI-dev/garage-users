@@ -40,6 +40,6 @@ const maintenanceSchema = new mongoose.Schema({
     }
 }); 
 
-
+// export module
 module.exports = mongoose.model('Maintenance', maintenanceSchema);
             

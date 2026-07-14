@@ -81,5 +81,5 @@ equipmentSchema.pre('save', function(next) {
   this.updatedAt = Date.now();
   next();
 });
-
+// export modules
 module.exports = mongoose.model('Equipment', equipmentSchema);
