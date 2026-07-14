@@ -43,6 +43,6 @@ const driverLogSchema = new mongoose.Schema({
     }
 }); 
 
-
+// export module
 module.exports = mongoose.model('DriverLog', driverLogSchema);
         

@@ -82,4 +82,5 @@ equipmentSchema.pre('save', function(next) {
   next();
 });
 
+// export module
 module.exports = mongoose.model('Equipment', equipmentSchema);
