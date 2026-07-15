@@ -1,9 +1,11 @@
 import { useState, useCallback } from 'react';
 import { toast } from 'react-toastify';
+
 // Custom hook to manage API calls with loading and error states
 export const useApiCall = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
 // Function to execute an API call with optional success and error callbacks
   const execute = useCallback(async (apiFunction, onSuccess, onError) => {
     setLoading(true);
