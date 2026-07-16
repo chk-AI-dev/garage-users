@@ -8,7 +8,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') === 'dark');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+// Effect to apply the dark mode class to the HTML element based on the isDarkMode state
   useEffect(() => {
     const html = document.documentElement;
     if (isDarkMode) {
