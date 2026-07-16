@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-
+// ProtectedRoute component to guard routes based on authentication and roles
 const ProtectedRoute = ({ children, requiredRole = null }) => {
   const { isAuthenticated, user } = useAuth();
 
