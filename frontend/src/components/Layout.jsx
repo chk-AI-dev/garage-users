@@ -11,5 +11,5 @@ const Layout = ({ children }) => {
     </div>
   );
 };
-
+// Export the Layout component for use in other parts of the application
 export default Layout;
