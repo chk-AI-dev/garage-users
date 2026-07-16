@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-
+// Layout component to wrap the main content with a sidebar
 const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex bg-gray-50 dark:bg-gray-900">
