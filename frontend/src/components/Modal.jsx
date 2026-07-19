@@ -1,9 +1,9 @@
 import React from 'react';
 import './Modal.css';
-
+// Modal component for displaying content in a modal dialog
 const Modal = ({ isOpen, title, onClose, children, onSubmit, submitText = 'Submit' }) => {
   if (!isOpen) return null;
-
+  // Render the modal only if isOpen is true 
   return (
     <>
       <div className="modal-overlay" onClick={onClose}></div>
