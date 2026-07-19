@@ -4,7 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 // ProtectedRoute component to guard routes based on authentication and roles
 const ProtectedRoute = ({ children, requiredRole = null }) => {
   const { isAuthenticated, user } = useAuth();
-
+  // Check if the user is authenticated
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
