@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+    // Send forgot password request to the API
     try {
       const response = await authApi.forgotPassword(email);
       setSubmitted(true);

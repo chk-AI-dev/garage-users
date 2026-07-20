@@ -6,7 +6,7 @@ import api from '../utils/api';
 export default function DriverLogs() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  // Fetch driver logs from the API when the component mounts
   useEffect(() => {
     let mounted = true;
     async function load() {

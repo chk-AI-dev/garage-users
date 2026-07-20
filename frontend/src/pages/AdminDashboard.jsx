@@ -10,7 +10,8 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const { isAdmin } = useAuth();
-
+  // Redirect to dashboard if the user is not an admin
+  
   useEffect(() => {
     fetchStats();
   }, []);
