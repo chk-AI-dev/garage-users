@@ -25,7 +25,7 @@ const Dashboard = () => {
   };
   // Only allow access if user is authenticated and has the right role
   if (loading) return <LoadingSpinner />;
-
+  // Redirect to admin dashboard if the user is an admin
   return (
     <div className="container dashboard">
       <h2>Welcome, {stats?.firstName}!</h2>

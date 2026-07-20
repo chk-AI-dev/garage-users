@@ -10,12 +10,13 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const { isAdmin } = useAuth();
-
+  // Redirect non-admin users to the dashboard
+   
   useEffect(() => {
     fetchStats();
   }, []);
 
-  
+  // Fetch statistics from the API and update the state
   const fetchStats = async () => {
     try {
       const response = await dashboardApi.getStats();
