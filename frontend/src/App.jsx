@@ -25,6 +25,7 @@ import NotFound from './pages/NotFound';
 import './styles/global.css';
 import './styles/components.css';
 
+// Main App Component
 function App() {
   return (
     <Router>
