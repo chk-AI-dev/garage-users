@@ -21,16 +21,16 @@ export const SidebarProvider = ({ children }) => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(collapsed));
     } catch (e) {}
   }, [collapsed]);
-
+  // Toggle function to switch between collapsed and expanded states
   const toggle = () => setCollapsed((v) => !v);
-
+  // Provide the context value to children
   return (
     <SidebarContext.Provider value={{ collapsed, setCollapsed, toggle }}>
       {children}
     </SidebarContext.Provider>
   );
 };
-
+// Custom hook to use the sidebar context
 export const useSidebar = () => useContext(SidebarContext);
 
 export default SidebarContext;
