@@ -11,21 +11,21 @@ export const AuthProvider = ({ children }) => {
   // auto context token from localStorage on initial load
   const [token, setToken] = useState(() => localStorage.getItem('token'));
   const [loading, setLoading] = useState(false);
-
+  // Function to handle user login, storing user data and token in state and localStorage
   const login = useCallback((userData, authToken) => {
     setUser(userData);
     setToken(authToken);
     localStorage.setItem('user', JSON.stringify(userData));
     localStorage.setItem('token', authToken);
   }, []);
-
+  // Function to handle user logout, clearing user data and token from state and localStorage
   const logout = useCallback(() => {
     setUser(null);
     setToken(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
   }, []);
-
+  // Function to update user data in state and localStorage
   const updateUser = useCallback((userData) => {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
