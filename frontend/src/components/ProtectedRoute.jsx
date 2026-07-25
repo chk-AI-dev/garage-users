@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children, requiredRole = null }) => {
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
-
+  // Check if the user has the required role(s)
   if (requiredRole && !Array.isArray(requiredRole)) {
     requiredRole = [requiredRole];
   }

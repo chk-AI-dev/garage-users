@@ -17,7 +17,7 @@ export default function ServerDataTable({
   const [sortKey, setSortKey] = useState(null);
   const [sortDir, setSortDir] = useState('desc');
   const [search, setSearch] = useState('');
-
+  // Fetch data from the API endpoint with the current pagination, sorting, and search parameters
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {

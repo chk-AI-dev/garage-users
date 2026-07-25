@@ -19,7 +19,7 @@ const Header = () => {
       localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
-
+  // Handle logout by calling the logout function from auth context and navigating to the login page
   const handleLogout = () => {
     logout();
     navigate('/login');
