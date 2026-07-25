@@ -17,7 +17,7 @@ export default function ServerDataTable({
   const [sortKey, setSortKey] = useState(null);
   const [sortDir, setSortDir] = useState('desc');
   const [search, setSearch] = useState('');
-
+  // Fetch data from the server whenever page, limit, sort, search, or extraParams change
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
