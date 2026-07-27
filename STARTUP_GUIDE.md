@@ -110,6 +110,7 @@ Look for output:
 
 
 ### Required in `.env`:
+
 - ✅ PORT=5000
 - ✅ NODE_ENV=development
 - ✅ MONGODB_URI=mongodb://localhost:27017/garage-users
@@ -119,13 +120,13 @@ Look for output:
 
 
 ### Fixed Issues:
+
 - ✅ CORS fallback changed to port 3000 (frontend)
 - ✅ All environment variables configured
 
 ---
 
 ## Port Reference
-
 | Service | Port | Status |
 |---------|------|--------|
 | Backend (Express) | 5000 | Must be free |

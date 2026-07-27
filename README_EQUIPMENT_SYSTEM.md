@@ -7,6 +7,7 @@ Your Equipment Management System for mining operations is **fully built and read
 ## ✅ What Was Built
 
 ### Backend (Production-Grade APIs)
+
 - **9 RESTful API Endpoints** with full CRUD functionality
 - **Equipment Controller** with comprehensive business logic
 - **Equipment Routes** with authentication/authorization
@@ -16,6 +17,7 @@ Your Equipment Management System for mining operations is **fully built and read
 - **Auto-Audit Trail** (createdBy/updatedBy tracking)
 
 ### Frontend (Professional UI)
+
 - **Equipment Management Page** with full CRUD interface
 - **Smart Search** across equipment ID, type, and registration number
 - **Advanced Filtering** by type, status, and assigned area
