@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken');
 // Middleware for authentication and authorization
 const authenticate = (req, res, next) => {
+  // Check for token in the authorization header
   try {
     const token = req.headers.authorization?.split(' ')[1];
-
+    // Check if token is present
     if (!token) {
       return res.status(401).json({
         success: false,
