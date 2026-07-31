@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 // Middleware for authentication and authorization
 const authenticate = (req, res, next) => {
+  // Get token from headers
   try {
     const token = req.headers.authorization?.split(' ')[1];
 
@@ -30,7 +31,7 @@ const authorize = (...allowedRoles) => {
         message: 'Unauthorized'
       });
     }
-
+    // Check if the user's role is in the allowed roles
     if (allowedRoles.length && !allowedRoles.includes(req.user.role)) {
       return res.status(403).json({
         success: false,

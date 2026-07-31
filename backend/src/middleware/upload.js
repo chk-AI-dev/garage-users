@@ -20,17 +20,18 @@ const storage = multer.diskStorage({
 });
 // File filter to allow only image files
 const fileFilter = (req, file, cb) => {
+  // Define allowed file types
   const allowedTypes = /jpeg|jpg|png|gif/;
   const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
   const mimetype = allowedTypes.test(file.mimetype);
-
+  // Check if the file is an image
   if (extname && mimetype) {
     cb(null, true);
   } else {
     cb(new Error('Invalid file type. Only image files are allowed.'));
   }
 };
-
+// Multer upload configuration
 const upload = multer({
   storage: storage,
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
