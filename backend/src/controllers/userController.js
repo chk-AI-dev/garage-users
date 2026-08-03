@@ -11,13 +11,13 @@ exports.getAllUsers = async (req, res) => {
     // check role & status
     if (role) query.role = role;
     if (status) query.status = status;
-
+    // Pagination
     const skip = (page - 1) * limit;
     const users = await User.find(query)
       .skip(skip)
       .limit(parseInt(limit))
       .sort({ createdAt: -1 });
-
+    // Count total users for pagination
     const total = await User.countDocuments(query);
     // Return paginated response
     res.json({

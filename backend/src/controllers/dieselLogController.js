@@ -5,14 +5,14 @@ exports.getAllDieselLogs = async (req, res) => {
   try {
     const { date, page = 1, limit = 25, search } = req.query;
     const query = {};
-
+    // Filter by date if provided
     if (date) {
       const d = new Date(date);
       const start = new Date(d.setHours(0, 0, 0, 0));
       const end = new Date(d.setHours(23, 59, 59, 999));
       query.date = { $gte: start, $lte: end };
     }
-
+    // Filter by search term if provided
     if (search) {
       query.$or = [
         { alert: { $regex: search, $options: 'i' } }
