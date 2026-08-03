@@ -6,11 +6,11 @@ exports.getAllMaintenance = async (req, res) => {
   try {
     const { machineId, status, page = 1, limit = 25, search } = req.query;
     const query = {};
-
+    // Filter by machineId and status if provided
     if (machineId) query.machineId = machineId;
     if (status) query.status = status;
     if (search) query.$or = [{ status: { $regex: search, $options: 'i' } }];
-
+    // Pagination and sorting
     const skip = (page - 1) * limit;
     const found = await Maintenance.find(query);
     let items;
