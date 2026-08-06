@@ -12,12 +12,12 @@ const ProtectedRoute = ({ children, requiredRole = null }) => {
   if (requiredRole && !Array.isArray(requiredRole)) {
     requiredRole = [requiredRole];
   }
-
+  // If the user's role does not match the required role(s), redirect to the dashboard
   if (requiredRole && !requiredRole.includes(user?.role)) {
     return <Navigate to="/dashboard" replace />;
   }
 
   return children;
 };
-
+// Export the ProtectedRoute component for use in other parts of the application
 export default ProtectedRoute;
