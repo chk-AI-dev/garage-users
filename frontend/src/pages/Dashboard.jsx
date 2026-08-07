@@ -3,7 +3,7 @@ import { dashboardApi } from '../utils/apiClient';
 import { useAuth } from '../hooks/useAuth';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './Dashboard.css';
-
+// Dashboard component to display user statistics and information
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);

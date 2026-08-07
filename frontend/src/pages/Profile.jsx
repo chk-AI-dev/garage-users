@@ -4,7 +4,7 @@ import { profileApi } from '../utils/apiClient';
 import { useAuth } from '../hooks/useAuth';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './Profile.css';
-
+// Profile component to display and edit user profile information
 const Profile = () => {
   const { user, updateUser } = useAuth();
   const [profile, setProfile] = useState(null);
